@@ -5,7 +5,7 @@ from number_puzzle import NumberPuzzle
 
 
 def solve(puzzle):
-    """ finds a solution by simple breadth first search, and prints it """
+    """ finds a solution by simple breadth first search, and returns it as a list of board positions """
     start_board = puzzle.start_board
     if puzzle.is_goal(start_board):
         print("Board is already solved")
@@ -36,6 +36,7 @@ def solve(puzzle):
 
 
 def print_solution(puzzle, solution, boards_per_line=5):
+    " prints board states in solution "
     for move_number in range(0, len(solution), boards_per_line):
         puzzle.pretty_print(solution[move_number : move_number + boards_per_line])
         print(move_number)
